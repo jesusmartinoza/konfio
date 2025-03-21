@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:konfio_challenge/pages/dogs/dogs.page.dart';
+import 'package:konfio_challenge/theme/material_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Konfío',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: MaterialTheme.light(),
       home: const DogsPage(),
     );
   }
