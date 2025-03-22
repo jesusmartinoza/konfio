@@ -2,7 +2,7 @@
 
 A Flutter application developed as part of the Konfio interview process. The app displays a list of dogs with their details in a card layout.
 
-![App Demo](extras/demo.gif)
+![App Demo](extra/demo.gif)
 
 ## Considerations
 
