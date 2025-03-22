@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:konfio_challenge/models/dogs/dog.model.dart';
 import 'package:konfio_challenge/theme/spaces.dart';
 
 class DogCard extends StatefulWidget {
   final bool hasShadow;
-  const DogCard({super.key, this.hasShadow = true});
+  final DogModel dog;
+  const DogCard({super.key, required this.dog, this.hasShadow = false});
 
   @override
   State<DogCard> createState() => _DogCardState();
@@ -22,7 +24,7 @@ class _DogCardState extends State<DogCard> {
         image: DecorationImage(
           // TODO: Change to Image.network to handle load error and loading
           image: NetworkImage(
-            'https://static.wikia.nocookie.net/isle-of-dogs/images/a/af/Rex.jpg',
+            widget.dog.image,
           ),
           fit: BoxFit.cover,
         ),
@@ -53,14 +55,14 @@ class _DogCardState extends State<DogCard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Spots', style: _theme.textTheme.titleLarge),
-            Text(
-                'He is much more passive and is the first to suggest to rescue and not eat The Little Pilot',
+            Text(widget.dog.dogName, style: _theme.textTheme.titleLarge),
+            Text(widget.dog.description,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 4,
                 style: _theme.textTheme.bodyMedium),
             Spaces.vertical16,
-            Text('Almost 2 years', style: _theme.textTheme.labelLarge),
+            Text('Almost ${widget.dog.age} years',
+                style: _theme.textTheme.labelLarge),
           ],
         ),
       ),
