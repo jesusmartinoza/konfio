@@ -10,15 +10,19 @@ class DogsPage extends StatelessWidget {
 
   _buildList() {
     return BlocBuilder<DogsCubit, DogsState>(builder: (context, state) {
-      return ListView.builder(
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: DogCard(dog: state.dogs[index], hasShadow: index == 1),
-            );
-          },
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          itemCount: state.dogs.length);
+      final cubit = context.read<DogsCubit>();
+      return RefreshIndicator(
+        onRefresh: () => cubit.readDogs(),
+        child: ListView.builder(
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: DogCard(dog: state.dogs[index], hasShadow: index == 1),
+              );
+            },
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            itemCount: state.dogs.length),
+      );
     });
   }
 
