@@ -2,6 +2,8 @@
 
 A Flutter application developed as part of the Konfio interview process. The app displays a list of dogs with their details in a card layout.
 
+![App Demo](extras/demo.gif)
+
 ## Considerations
 
 - Initial app launch fetches data from the remote endpoint. Subsequent pull-to-refresh actions load data from the local database 🤓
