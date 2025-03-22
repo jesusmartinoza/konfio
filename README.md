@@ -22,7 +22,7 @@ The project follows a clean architecture approach with clear separation of conce
   - `[SCREEN_NAME].state.dart`: Defines state properties
 - **repos**: Implements repository pattern to abstract data sources
 - **theme**: Centralizes app-wide styling, colors, and design utilities
-- **utils**: Contains utility functions and extensions, including a Kotlin-inspired 'let' function for null safety <3
+- **utils**: Contains utility functions and extensions, including a Kotlin-inspired ❤️ let function for null safety
 - **widgets**: Reusable UI components per page
 
 Each layer has a specific responsibility:
